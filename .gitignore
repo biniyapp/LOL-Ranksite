@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+dist/
+build/
+frontend/dist/
+
+# Python
+__pycache__/
+backend/__pycache__/
+*.py[cod]
+*.class
+venv/
+env/
+.env
+.venv
+
+# Database
+*.db
+*.sqlite3
+lol_ranking.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
