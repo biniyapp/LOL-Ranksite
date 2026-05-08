@@ -1,10 +1,18 @@
+import os
 import requests
 import urllib.parse
 from fastapi import HTTPException
 import concurrent.futures
+from dotenv import load_dotenv
 
-# ⚠️ 최신 API 키를 사용해 주세요
-API_KEY = "RGAPI-8899f5c9-c4b0-4c08-96f5-7c71db02b670"
+# .env 파일 로드
+load_dotenv()
+
+# 환경 변수에서 API 키를 가져옵니다.
+API_KEY = os.getenv("RIOT_API_KEY")
+
+if not API_KEY:
+    print("⚠️ 경고: RIOT_API_KEY 환경 변수가 설정되지 않았습니다.")
 
 def get_summoner_lp(nickname: str, tag: str):
     encoded_nickname = urllib.parse.quote(nickname)
