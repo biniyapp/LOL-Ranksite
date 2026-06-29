@@ -16,7 +16,7 @@ app = FastAPI()
 def update_db_schema():
     db = database.SessionLocal()
     try:
-        # SQLite와 PostgreSQL 모두 호환되는 방식으로 last_updated 컬럼 추가 시도
+        # SQLite와 PostgreSQL 호환되는 방식으로 last_updated 컬럼 추가 
         # PostgreSQL은 TIMESTAMP WITH TIME ZONE을 권장합니다.
         db.execute(text("ALTER TABLE users ADD COLUMN last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP"))
         db.commit()
